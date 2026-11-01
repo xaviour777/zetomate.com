@@ -1,5 +1,6 @@
 import { Bricolage_Grotesque, DM_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import UtmCapture from '@/components/UtmCapture';
 
 const display = Bricolage_Grotesque({ subsets: ['latin'], weight: ['500', '700', '800'], variable: '--display' });
 const sans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '700'], variable: '--sans' });
@@ -20,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} ${serif.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body><UtmCapture />{children}</body>
     </html>
   );
 }
