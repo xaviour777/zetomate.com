@@ -41,7 +41,7 @@ export default async function Home() {
         <header className="glass navbar">
           <Link href="/" className="grow" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', fontFamily: 'var(--display)', fontWeight: 800, fontSize: 20, letterSpacing: '-0.03em' }}><Mark /> zetomate</Link>
           <nav aria-label="Main" className="links">
-            <a href="#path">Paths</a><a href="#proof">Proof</a><a href="#system">System</a><a href="#offer">Offers</a><Link href="/missions/ai-film">Missions</Link>
+            <a href="#path">Paths</a><a href="#proof">Proof</a><a href="#system">System</a><a href="#pods">Pods</a><a href="#offer">Pricing</a><Link href="/missions/ai-film">Missions</Link>
           </nav>
           <RegionSelect value={id} />
           <Link href="/start" className="cta sm">Start free <span className="dot">→</span></Link>
@@ -119,6 +119,42 @@ export default async function Home() {
                 <span style={{ marginTop: 'auto', borderTop: '1px solid var(--g-line)', paddingTop: 14, fontSize: 14 }}><span className="k" style={{ display: 'block', marginBottom: 6 }}>You leave with</span>{d}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Creator Pods */}
+        <section id="pods" className="wrap stack" style={{ gap: 40, paddingBottom: 140 }}>
+          <div className="row between">
+            <div className="stack" style={{ maxWidth: 820 }}>
+              <span className="k">Creator Pods</span>
+              <h2 className="h2">Your first 10 collaborators are <span className="serif" style={{ fontWeight: 400 }}>already waiting.</span></h2>
+            </div>
+            <p className="muted" style={{ maxWidth: 400 }}>Join a pod of 10 creators in your niche. Make collab videos that appear on every member's channel — YouTube, Instagram and Facebook now support official multi-creator posts.</p>
+          </div>
+          <div className="grid" style={{ '--min': '260px' }}>
+            {[
+              ['01', 'Matched, not random', 'Same niche, similar audience size, active creators only. You unlock collabs by finishing missions — so every partner is serious.'],
+              ['02', 'Real content, shared audiences', 'Official co-author posts that show on both channels. No fake likes, no engagement rings — just better videos, seen by more people.'],
+              ['03', 'Collab drops on schedule', 'Pod: 2 collab drops a month. Elite: every week. Briefs, roles and deadlines handled in the app.'],
+              ['04', 'Grow the network', 'Weekly pod challenges, a pod leaderboard, and rotation every 8 weeks — about 60 new creator connections a year.'],
+            ].map(([n, t, b]) => (
+              <div key={n} className="glass stack" style={{ padding: 28, gap: 14 }}>
+                <span className="disp" style={{ fontSize: 40, lineHeight: 1, color: 'rgba(255,255,255,.35)' }}>{n}</span>
+                <h3 style={{ fontSize: 26 }}>{t}</h3>
+                <p className="muted" style={{ fontSize: 15 }}>{b}</p>
+              </div>
+            ))}
+          </div>
+          <div className="glass white row between" style={{ padding: 'clamp(24px, 4vw, 48px)', gap: 28, alignItems: 'center' }}>
+            <div className="stack" style={{ flex: '999 1 480px', minWidth: 0, gap: 12 }}>
+              <span className="k">Network Elite · 100 seats</span>
+              <h3 style={{ fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1 }}>One confirmed post on the ZetoMate network — <span className="serif" style={{ fontWeight: 400 }}>every month.</span></h3>
+              <p className="muted" style={{ fontSize: 14 }}>12M+ combined audience*. Placed after quality approval and labelled as a paid partnership. Views are not guaranteed.</p>
+            </div>
+            <div className="row" style={{ gap: 12 }}>
+              <Link href="/start?plan=pod" className="cta" style={{ background: '#0a0a0a', color: '#fff' }}>Find my pod <span className="dot" style={{ background: '#fff', color: '#0a0a0a' }}>→</span></Link>
+              <Link href="/start?plan=elite" className="ghost" style={{ color: '#0a0a0a' }}>Apply for Elite</Link>
+            </div>
           </div>
         </section>
 

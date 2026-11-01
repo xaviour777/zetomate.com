@@ -7,8 +7,8 @@ import { track } from '@/lib/track';
 export const GOALS = [
   { id: 'content', short: 'Create content', pain: "I have ideas, but don't know where to start.", mission: 'Ship your first publishable piece.', body: 'AI tools, production, storytelling and editing — then publish one thing worth sharing.', rec: 1, steps: ['Pick one idea', 'Produce with the starter workflow', 'Publish on one platform'] },
   { id: 'views', short: 'Get more views', pain: "I'm publishing. Nobody seems to notice.", mission: 'The 30-day creator sprint.', body: 'Hooks, packaging, audience psychology and testing. Create, publish, test, learn.', rec: 2, steps: ['Audit three past posts', 'Rewrite hooks with the Drama Method™', 'Test two formats'] },
-  { id: 'money', short: 'Make money', pain: 'I want my work to become real income.', mission: 'Make your first real offer.', body: 'Turn a skill into something somebody might actually buy, and test it with real people.', rec: 3, steps: ['Map your skills', 'Position one offer', 'Test with five potential buyers'] },
-  { id: 'brand', short: 'Build a brand', pain: 'I have a product, service or business idea.', mission: 'Your brand on one page.', body: 'Turn your idea into something people understand, remember and want.', rec: 1, steps: ['Define the audience', 'Write the one-line promise', 'Make a launch asset'] },
+  { id: 'money', short: 'Make money', pain: 'I want my work to become real income.', mission: 'Make your first real offer.', body: 'Turn a skill into something somebody might actually buy, and test it with real people.', rec: 2, steps: ['Map your skills', 'Position one offer', 'Test with five potential buyers'] },
+  { id: 'brand', short: 'Build a brand', pain: 'I have a product, service or business idea.', mission: 'Your brand on one page.', body: 'Turn your idea into something people understand, remember and want.', rec: 3, steps: ['Define the audience', 'Write the one-line promise', 'Make a launch asset'] },
   { id: 'films', short: 'Make films', pain: 'I have stories in my head.', mission: 'Make your first AI film.', body: 'From idea to finished cinematic short: direction, character consistency, sound and edit.', rec: 2, steps: ['Write a one-page story', 'Direct consistent characters', 'Cut, score and publish'] },
 ];
 
@@ -63,7 +63,7 @@ function Offers({ region, rec, goal }) {
       <div className="row between">
         <div className="stack" style={{ maxWidth: 760 }}>
           <span className="k muted">05 — Your next level</span>
-          <h2 className="h2">You don't need <span className="serif">everything.</span></h2>
+          <h2 className="h2">Learn it. Make it. <span className="serif">Get it seen.</span></h2>
         </div>
         <p style={{ maxWidth: 380, color: 'var(--g-soft, #555)' }}>Recommended for <b>{goal}</b> — prices shown in {region.cur}.</p>
       </div>
@@ -74,13 +74,15 @@ function Offers({ region, rec, goal }) {
             <div key={p.name} className="card" style={on ? { background: 'var(--ink)', color: 'var(--canvas)', borderColor: 'var(--ink)' } : undefined}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span className="k">{p.name}</span>
-                {on && <span className="k" style={{ background: 'var(--gold)', color: 'var(--ink)', padding: '7px 10px', borderRadius: 999 }}>For you</span>}
+                {on ? <span className="k" style={{ background: 'var(--gold)', color: 'var(--ink)', padding: '7px 10px', borderRadius: 999 }}>For you</span>
+                  : p.badge && <span className="k" style={{ border: '1px solid currentColor', padding: '6px 9px', borderRadius: 999 }}>{p.badge}</span>}
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
                 <span style={{ fontSize: 52, lineHeight: 1, fontWeight: 700, letterSpacing: '-0.04em' }}>{region.prices[i]}</span>
                 <span style={{ fontSize: 13, opacity: .65 }}>{p.per}</span>
               </div>
               <p style={{ fontSize: 15, opacity: .8 }}>{p.for}</p>
+              {p.value && <p className="serif" style={{ fontSize: 19, lineHeight: 1.25 }}>“{p.value}”</p>}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14, flexGrow: 1, paddingTop: 14, borderTop: `1px solid ${on ? '#333' : 'var(--surface)'}` }}>
                 {p.items.map((x) => <span key={x}>— {x}</span>)}
               </div>
@@ -89,7 +91,7 @@ function Offers({ region, rec, goal }) {
           );
         })}
       </div>
-      <p className="muted" style={{ fontSize: 12 }}>Proposed launch prices; regional prices are indicative until validated. Dates, deliverables and refund terms are confirmed before checkout.</p>
+      <p className="muted" style={{ fontSize: 12 }}>Monthly plans, cancel anytime; annual plans get 2 months free. Collab drops are official co-author posts between pod members. Network posts are placed after quality approval, labelled as paid partnerships, and views are not guaranteed. Audience figures pending verification. Regional prices are indicative until validated.</p>
     </section>
   );
 }
