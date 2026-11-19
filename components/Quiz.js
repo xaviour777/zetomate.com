@@ -12,11 +12,11 @@ const Q = [
 
 // [mission, plan name, plan index into regional prices, reason, link]
 const M = {
-  'Make films': ['Make your first AI film', 'Creator Sprint', 2, 'Finish a cinematic short in a guided sprint with feedback.', '/missions/ai-film#join'],
-  'Get more views': ['The 30-day creator sprint', 'Creator Sprint', 2, 'Publish, test and learn with milestone-based assignments.', '/missions/ai-film#join'],
-  'Make money': ['Make your first real offer', 'ZetoMate Pro', 3, 'Live sessions, project reviews and offer-building frameworks.', '/#offer'],
-  'Build a brand': ['Your brand on one page', 'The Blueprint', 1, 'Templates and workflows to position and launch.', '/#offer'],
-  'Create content': ['Ship your first publishable piece', 'The Blueprint', 1, 'Workflows and prompt architectures you can use today.', '/#offer'],
+  'Make films': ['Make your first AI film', 'Creator Club', 1, 'The full mission path, Vault and weekly leagues — monthly, cancel anytime.', '/#offer'],
+  'Get more views': ['The 30-day creator sprint', 'Collab Pod', 2, '10 creators in your niche and 2 collab drops a month to reach new audiences.', '/#pods'],
+  'Make money': ['Make your first real offer', 'Collab Pod', 2, 'Mentor reviews, pod collabs and offer-building missions.', '/#pods'],
+  'Build a brand': ['Your brand on one page', 'Network Elite', 3, 'Weekly collabs plus a monthly post on the ZetoMate network. Application only.', '/#pods'],
+  'Create content': ['Ship your first publishable piece', 'Creator Club', 1, 'Workflows, prompt library and every mission — for the price of a coffee a week.', '/#offer'],
 };
 const PRESET = { films: 'Make films', views: 'Get more views', money: 'Make money', brand: 'Build a brand', content: 'Create content' };
 
